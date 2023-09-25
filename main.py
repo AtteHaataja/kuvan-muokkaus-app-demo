@@ -173,16 +173,17 @@ def main_loop():
 
     #st.image([original_image, processed_image])
     if blur_rate != 0:
-        picture_caption = picture_caption + "sumennus arvolla: " + blur_rate + ", "
+        picture_caption = picture_caption + "sumennus arvolla: " + str(blur_rate) + ", "
         if brightness_amount != 0:
             if apply_enhancement_filter:
                 showing_image = processed_image
             else:
+                picture_caption = picture_caption + "sumennus arvolla: " + str(blur_rate) + ", sekä kuvan kirkkaus arvolla: " + str(brightness_amount) + ", "
                 showing_image = brightened_image
         else:
             showing_image = blurred_image
     elif brightness_amount != 0:
-        picture_caption = picture_caption + "kuvan kirkkaus arvolla: " + brightness_amount + ", "
+        picture_caption = picture_caption + "kuvan kirkkaus arvolla: " + str(brightness_amount) + ", "
         if apply_enhancement_filter:
             showing_image = processed_image
         else:
